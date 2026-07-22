@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Chiroyli Veb-saytim</title>
+    <style>
+        /* Umumiy stillar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Navigatsiya paneli */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Asosiy qism (Hero Section) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+            background: linear-gradient(45deg, #38bdf8, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+            transition: 0.3s transform, 0.3s box-shadow;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+        }
+
+        /* Xizmatlar qismi (Xizmatlar) */
+        .services {
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #38bdf8;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card icon {
+            font-size: 40px;
+            color: #38bdf8;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Aloqa qismi */
+        .contact {
+            padding: 100px 10%;
+            background: #1e293b;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #0f172a;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        /* Animatsiyalar */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobil qurilmalar uchun moslashuvchanlik */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Oddiylik uchun mobil menyu yashirildi */
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigatsiya -->
+    <header>
+        <a href="#" class="logo">Dizayn.AI</a>
+        <ul class="nav-links">
+            <li><a href="#">Asosiy</a></li>
+            <li><a href="#services">Xizmatlar</a></li>
+            <li><a href="#contact">Aloqa</a></li>
+        </ul>
+    </header>
+
+    <!-- Asosiy Banner -->
+    <section class="hero">
+        <h1>Salom, Men <span>Dasturchiman</span></h1>
+        <p>Zamonaviy, tezkor va chiroyli veb-saytlar hamda raqamli mahsulotlar yaratish bilan shug'ullanaman. Biznesingizni yangi bosqichga olib chiqing.</p>
+        <a href="#contact" class="btn">Men bilan bog'lanish</a>
+    </section>
+
+    <!-- Xizmatlar -->
+    <section class="services" id="services">
+        <h2 class="section-title">Xizmatlarimiz</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Web Dizayn</h3>
+                <p>Foydalanuvchilarga qulay va zamonaviy UI/UX interfeyslarni loyihalash.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript va zamonaviy freymvorklar yordamida tezkor saytlar yaratish.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Mobil Moslashuvchanlik</h3>
+                <p>Saytingiz barcha turdagi smartfon va planshetlarda chiroyli ko'rinishini ta'minlash.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aloqa -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Loyihangiz bormi?</h2>
+        <p>Keling, uni birgalikda haqiqatga aylantiramiz! Quyidagi tugma orqali menga xabar yuboring.</p>
+        <a href="mailto:example@gmail.com" class="btn" id="contactBtn">Xabar yo'llash</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dizayn.AI. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Oddiy interaktiv effekt: Tugma bosilganda konsolga yozish va effekt
+        document.getElementById('contactBtn').addEventListener('click', function(e) {
+            console.log("Aloqa tugmasi bosildi!");
+            // Bu yerga xohlagan JS funksiyangizni qo'shishingiz mumkin
+        });
+    </script>
+</body>
+</html>
